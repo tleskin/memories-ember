@@ -1,0 +1,12 @@
+<ul>
+  {{#each memory in model}}
+    <li>
+      <h4>
+        Moment {{memory.id}}
+      </h4>
+      <p><em>{{memory.content}}</em></p>
+      <p>{{memory.caption}}</p>
+      <span>Moment from {{memory.happenedAt}} at {{memory.location}}</span>
+    </li>
+  {{/each}}
+</ul>

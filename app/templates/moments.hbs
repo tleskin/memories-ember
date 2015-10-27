@@ -1,0 +1,25 @@
+<h2>Add a New Moment</h2>
+<form>
+  <label>Caption</label>
+  {{input type="text" placeholder="Caption" class="new-memory-caption" value=caption}}
+  <br><label>Content</label>
+  {{input type="text" placeholder="Content" class="new-memory-content" value=content}}
+  <br><label>Location</label>
+  {{input type="text" placeholder="Location" class="new-memory-location" value=location}}
+  <br><label>Happened At</label>
+  {{input type="datetime-local" placeholder="Happened" class="new-memory-happenedat" value=happenedAt}}
+  <br><input type="submit" value="Submit Your New Moment" {{action 'addNewMoment'}}>
+</form>
+<br>
+<ul>
+  {{#each moment in model}}
+    <li>
+      <h4>
+        Moment {{moment.id}}
+      </h4>
+      <p><em>{{moment.content}}</em></p>
+      <p>{{moment.caption}}</p>
+      <span>Moment from {{moment.happenedAt}} at {{moment.location}}</span>
+    </li>
+  {{/each}}
+</ul>
